@@ -1,10 +1,11 @@
 spring:
   datasource:
     druid:
-      url: jdbc:mysql://localhost:3306/suixingpay_config?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
-      username: root
-      password: 123456
-      driver-class-name: com.mysql.cj.jdbc.Driver
+      #url: jdbc:mysql://localhost:3307/suixingpay_config?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+      url: jdbc:postgresql://localhost:5432/suixingpay_config
+      username: postgres
+      password: wwl200415
+      driver-class-name: org.postgresql.Driver
       filters: stat,wall
       initial-size: 5
       min-idle: 5
@@ -12,7 +13,8 @@ spring:
       max-wait: 60000
       time-between-eviction-runs-millis: 60000
       min-evictableidle-time-millis: 300000
-      validation-query: select 1 from dual
+      #validation-query: select 1 from dual
+      validation-query: select 'x'
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
@@ -21,7 +23,7 @@ spring:
       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
 
   redis:
-    host: 172.16.136.146
+    host: 127.0.0.1
     port: 6379
     jedis:
       pool:

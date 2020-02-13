@@ -17,6 +17,7 @@ dependencies {
     compile("io.lettuce:lettuce-core")
 
     compile 'mysql:mysql-connector-java'
+    compile 'org.postgresql:postgresql'
     compile 'org.aspectj:aspectjweaver'
     compile 'ch.qos.logback:logback-classic'
     compile "redis.clients:jedis"

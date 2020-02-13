@@ -94,7 +94,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `suixingpay_config`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `suixingpay_config`.`user` (
+CREATE TABLE IF NOT EXISTS `suixingpay_config`.`tuser` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '自增主键',
   `name` VARCHAR(45) NOT NULL COMMENT '登录名称',
   `password` VARCHAR(32) NOT NULL COMMENT '登录密码',

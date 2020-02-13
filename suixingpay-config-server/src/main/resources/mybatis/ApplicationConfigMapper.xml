@@ -22,13 +22,13 @@
     <select id="getByApplicationNameAnddProfile" resultMap="ApplicationConfigResultMap">
         select
         <include refid="columns"/>
-        from application_config g left join user u on g.user_id = u.id
+        from application_config g left join tuser u on g.user_id = u.id
         where g.application_name = #{applicationName} and g.profile = #{profile}
     </select>
 
     <sql id="select_from_where">
         from application_config g
-        left join user u on g.user_id = u.id
+        left join tuser u on g.user_id = u.id
         inner join application a on g.application_name = a.name
         <if test="!user.super">
             inner join user_application_config_role r on g.application_name = r.application_name and g.profile =

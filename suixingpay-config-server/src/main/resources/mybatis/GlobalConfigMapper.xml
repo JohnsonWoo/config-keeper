@@ -21,7 +21,7 @@
     <select id="getByProfile" parameterType="java.lang.String" resultMap="GlobalConfigResultMap">
         select
         <include refid="columns"/>
-        from global_config g left join user u on g.user_id = u.id
+        from global_config g left join tuser u on g.user_id = u.id
         where g.profile = #{profile}
     </select>
 
@@ -29,7 +29,7 @@
             resultMap="GlobalConfigResultMap">
         select
         <include refid="columns"/>
-        from global_config g left join user u on g.user_id = u.id
+        from global_config g left join tuser u on g.user_id = u.id
         <if test="!super">
             inner join user_global_config_role r on g.profile = r.profile
             where r.user_id = #{id}

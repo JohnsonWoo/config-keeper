@@ -19,14 +19,14 @@
     <select id="getById" parameterType="java.lang.Integer" resultMap="UserResultMap">
         select
         <include refid="columns"/>
-        from user
+        from tuser
         where id = #{id}
     </select>
 
     <select id="getByName" parameterType="java.lang.String" resultMap="UserResultMap">
         select
         <include refid="columns"/>
-        from user
+        from tuser
         where name = #{name}
     </select>
 
@@ -36,7 +36,7 @@
   </insert>
 
     <update id="updateUser" parameterType="com.suixingpay.config.server.entity.UserDO">
-        update user
+        update tuser
         <set>
             <if test="name != null and name != ''">name = #{name},</if>
             <if test="password != null and password != ''">password = #{password},</if>
@@ -47,7 +47,7 @@
         where id = #{id}
     </update>
     <sql id="select_from_where">
-        from user
+        from tuser
         <where>
             <if test="id != null">and id = #{id}</if>
             <if test="name != null and name != ''">and name like concat('%', #{name}, '%')</if>
