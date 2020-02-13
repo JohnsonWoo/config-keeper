@@ -4,8 +4,10 @@ buildscript {
         REPOSITORY_HOME = 'http://maven.aliyun.com' // maven需要改为公司内部的仓库
         REPOSITORY_URL =  REPOSITORY_HOME + "/nexus/content/groups/public"
         swaggerVersion = "2.8.0"
+        springCloudVersion = 'Greenwich.RELEASE'
+        springBootVersion = '2.1.4.RELEASE'
     }
-    apply from: sxGradleHome + 'spring-cloud-greenwich.gradle'
+    //apply from: sxGradleHome + 'spring-cloud-greenwich.gradle'
     repositories {
         maven { url REPOSITORY_URL }
     }
@@ -56,7 +58,7 @@ allprojects {
 
 
 subprojects {
-    apply from: sxGradleHome + 'spring-cloud2.gradle'
+    apply from: '../spring-cloud2.gradle'
 	
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
